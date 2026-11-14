@@ -3,349 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NyamNyam Bowl — Sekali Suap, Bikin Nagih!</title>
-    <meta name="description" content="NyamNyam Bowl Metland Cileungsi. Pelopor rice bowl kekinian dengan cita rasa Nusantara & modern, porsi melimpah, dan harga bersahabat.">
+    <title>NyamNyam Bowl — Katalog Menu Metland Cileungsi</title>
+    <meta name="description" content="Katalog Menu NyamNyam Bowl Metland Cileungsi. Nasi hangat, lauk melimpah, sambal segar. Sekali suap, bikin nagih!">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
+                        serif: ['"Fraunces"', 'Georgia', 'serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     },
                     colors: {
-                        brand: {
-                            orange: '#F97316',
-                            dark: '#1C1917',
-                            cream: '#FFFBEB',
-                            amber: '#F59E0B',
-                        }
+                        paper: '#FAF6F0',
+                        ink: '#1E1B18',
+                        chili: '#D9381E',
+                        turmeric: '#E59500',
+                        leaf: '#2D5A27',
                     }
                 }
             }
         }
     </script>
     <style>
-        .hero-pattern {
-            background-color: #FFFBEB;
-            background-image: radial-gradient(#FDE68A 1px, transparent 1px);
-            background-size: 24px 24px;
+        body {
+            background-color: #FAF6F0;
+            color: #1E1B18;
+        }
+        .paper-bg {
+            background-image: radial-gradient(rgba(30, 27, 24, 0.06) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .stamp-border {
+            border: 2px solid #1E1B18;
+            box-shadow: 4px 4px 0px #1E1B18;
+        }
+        .stamp-border-sm {
+            border: 1.5px solid #1E1B18;
+            box-shadow: 2.5px 2.5px 0px #1E1B18;
         }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+<body class="font-sans antialiased selection:bg-chili selection:text-white">
 
-    <!-- Navbar -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2">
-                <span class="text-2xl">🍜</span>
-                <span class="font-extrabold text-xl tracking-tight text-stone-900">NyamNyam<span class="text-orange-500">Bowl</span></span>
+    <!-- Top Strip Info -->
+    <div class="bg-ink text-paper text-xs py-2 px-4 text-center font-medium tracking-wide">
+        Buka Setiap Hari 10.00 – 21.00 WIB • Area Metland Cileungsi & Sekitarnya • 100% Halal
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-sm border-b-2 border-ink">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-full bg-chili text-paper flex items-center justify-center font-serif font-extrabold text-lg border-2 border-ink">
+                    N
+                </div>
+                <div class="leading-none">
+                    <span class="font-serif font-extrabold text-xl tracking-tight text-ink block">NyamNyam Bowl</span>
+                    <span class="text-[10px] uppercase tracking-widest text-stone-600 font-semibold">Katalog Resmi</span>
+                </div>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-stone-600">
-                <a href="#tentang" class="hover:text-orange-500 transition">Tentang Kami</a>
-                <a href="#menu" class="hover:text-orange-500 transition">Menu Favorit</a>
-                <a href="#promo" class="hover:text-orange-500 transition">Promo</a>
-                <a href="#testimoni" class="hover:text-orange-500 transition">Testimoni</a>
-                <a href="#lokasi" class="hover:text-orange-500 transition">Lokasi</a>
+
+            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-stone-700">
+                <a href="#menu" class="hover:text-chili transition">Daftar Menu</a>
+                <a href="#promo" class="hover:text-chili transition">Paket Promo</a>
+                <a href="#tentang" class="hover:text-chili transition">Tentang Kami</a>
+                <a href="#lokasi" class="hover:text-chili transition">Lokasi Outlet</a>
             </nav>
-            <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20pesan%20rice%20bowl." target="_blank"
-               class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold px-4 py-2.5 rounded-full shadow-sm transition flex items-center gap-1.5">
-                <span>Pesan Sekarang</span>
-            </a>
+
+            <div class="stamp-border-sm bg-turmeric text-ink text-xs sm:text-sm font-bold px-3.5 py-2 rounded-lg">
+                <span>Metland Cileungsi</span>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-pattern py-16 md:py-24 border-b border-amber-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-bold px-3.5 py-1.5 rounded-full mb-5">
-                    <span>🔥</span>
-                    <span>Best Rice Bowl di Metland Cileungsi</span>
+    <section class="paper-bg border-b-2 border-ink">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20 grid md:grid-cols-12 gap-10 items-center">
+            <div class="md:col-span-7">
+                <div class="inline-block border border-ink bg-white px-3 py-1 rounded-full text-xs font-bold mb-5">
+                    Katalog Kuliner Rice Bowl Kekinian
                 </div>
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-stone-900 leading-tight mb-5">
-                    Sekali Suap, <br><span class="text-orange-500">Bikin Nagih!</span>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-ink leading-[1.12] mb-5">
+                    Nasi Hangat, Lauk Melimpah. <span class="text-chili italic">Sekali Suap, Bikin Nagih!</span>
                 </h1>
-                <p class="text-base sm:text-lg text-stone-600 mb-8 leading-relaxed">
-                    Perpaduan nasi pulen hangat dengan racikan lauk rempah Nusantara &amp; saus modern. Porsi melimpah, 100% Halal, higienis, dan pas di kantong mahasiswa maupun pekerja!
+                <p class="text-stone-700 text-base sm:text-lg leading-relaxed mb-7 max-w-xl">
+                    Selamat datang di katalog resmi NyamNyam Bowl. Menyajikan pilihan menu rice bowl berkualitas dengan perpaduan rempah Nusantara dan saus modern untuk warga Metland Cileungsi.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#menu" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition">
-                        Lihat Daftar Menu
-                    </a>
-                    <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20tanya%20promo%20hari%20ini." target="_blank"
-                       class="bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 font-bold px-6 py-3.5 rounded-xl transition">
-                        Order via WhatsApp
+                <div class="flex flex-wrap items-center gap-3.5">
+                    <a href="#menu" class="stamp-border bg-chili text-white font-bold px-6 py-3.5 rounded-xl text-sm sm:text-base transition hover:bg-red-700">
+                        Lihat Katalog Menu ↓
                     </a>
                 </div>
-                <div class="mt-8 flex items-center gap-6 text-sm text-stone-600 font-medium">
-                    <div class="flex items-center gap-1.5"><span class="text-green-600 font-bold">✓</span> 100% Halal</div>
-                    <div class="flex items-center gap-1.5"><span class="text-green-600 font-bold">✓</span> Freshly Made</div>
-                    <div class="flex items-center gap-1.5"><span class="text-green-600 font-bold">✓</span> Mulai Rp25rb</div>
-                </div>
             </div>
 
-            <!-- Visual Card Showcase -->
-            <div class="relative">
-                <div class="bg-gradient-to-br from-orange-400 to-amber-500 rounded-3xl p-8 text-white shadow-xl">
-                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/25">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="bg-stone-900 text-amber-300 text-xs font-bold px-3 py-1 rounded-full">⭐ MENU TERLARIS</span>
-                            <span class="text-2xl font-extrabold">Rp25.000</span>
-                        </div>
-                        <div class="text-6xl my-4 text-center">🍛🍗🌶️</div>
-                        <h3 class="text-2xl font-extrabold mb-2">Chicken Sambal Matah Bowl</h3>
-                        <p class="text-sm text-orange-50 leading-relaxed mb-4">
-                            Nasi pulen 150gr + ayam crispy segar 90gr disiram sambal matah khas Bali yang pedas wangi + telur mata sapi.
-                        </p>
-                        <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20pesan%20Chicken%20Sambal%20Matah%20Bowl." target="_blank"
-                           class="block w-full text-center bg-stone-900 hover:bg-stone-800 text-white font-bold py-3 rounded-xl transition">
-                            Pesan Menu Ini →
-                        </a>
+            <!-- Kartu Visual Katalog -->
+            <div class="md:col-span-5">
+                <div class="stamp-border bg-white rounded-2xl p-5 sm:p-6 relative">
+                    <div class="flex items-center justify-between border-b-2 border-dashed border-stone-300 pb-3 mb-4">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-chili">★ Menu Andalan</span>
+                        <span class="text-xs font-bold bg-leaf text-white px-2.5 py-0.5 rounded">Favorit Warga</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Keunggulan / Tentang Kami -->
-    <section id="tentang" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-extrabold text-stone-900 mb-3">Kenapa Pilih NyamNyam Bowl?</h2>
-                <p class="text-stone-600">Solusi makan siang &amp; malam praktis buat warga Metland Cileungsi dan sekitarnya.</p>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100">
-                    <div class="text-3xl mb-3">🥘</div>
-                    <h3 class="font-bold text-lg text-stone-900 mb-1.5">Masak Fresh</h3>
-                    <p class="text-sm text-stone-600">Dimasak langsung saat pesanan masuk sehingga selalu hangat dan renyah.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100">
-                    <div class="text-3xl mb-3">🥡</div>
-                    <h3 class="font-bold text-lg text-stone-900 mb-1.5">Kemasan Anti-Tumpah</h3>
-                    <p class="text-sm text-stone-600">Paper bowl food-grade tahan panas, aman dibawa pulang maupun delivery.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100">
-                    <div class="text-3xl mb-3">⚡</div>
-                    <h3 class="font-bold text-lg text-stone-900 mb-1.5">Penyajian Cepat</h3>
-                    <p class="text-sm text-stone-600">Siap hanya dalam 5–7 menit, cocok untuk jam istirahat kantor &amp; kuliah.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100">
-                    <div class="text-3xl mb-3">🎉</div>
-                    <h3 class="font-bold text-lg text-stone-900 mb-1.5">Terima Catering</h3>
-                    <p class="text-sm text-stone-600">Siap melayani pesanan besar untuk rapat kantor, sekolah, dan acara ulang tahun.</p>
+                    <div class="bg-[#FDF2E3] border border-stone-200 rounded-xl p-5 mb-4 flex flex-col items-center justify-center">
+                        <svg class="w-32 h-28" viewBox="0 0 160 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M55 24C55 18 61 16 61 10" stroke="#D9381E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M80 20C80 14 86 12 86 6" stroke="#D9381E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M105 24C105 18 111 16 111 10" stroke="#D9381E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M32 62C32 42 54 32 80 32C106 32 128 42 128 62H32Z" fill="#FFFFFF" stroke="#1E1B18" stroke-width="2.5"/>
+                            <circle cx="96" cy="48" r="11" fill="#FDE68A" stroke="#1E1B18" stroke-width="2"/>
+                            <circle cx="96" cy="48" r="5" fill="#E59500"/>
+                            <path d="M46 54C50 45 64 44 72 52C76 56 68 61 56 61C46 61 44 58 46 54Z" fill="#D97706" stroke="#1E1B18" stroke-width="2"/>
+                            <circle cx="76" cy="42" r="2.5" fill="#D9381E"/>
+                            <circle cx="66" cy="45" r="2" fill="#2D5A27"/>
+                            <circle cx="82" cy="56" r="2.5" fill="#D9381E"/>
+                            <path d="M24 62H136C136 92 114 112 80 112C46 112 24 92 24 62Z" fill="#D9381E" stroke="#1E1B18" stroke-width="2.5"/>
+                            <path d="M26 74H134" stroke="#FAF6F0" stroke-width="2" stroke-dasharray="6 4"/>
+                            <rect x="60" y="112" width="40" height="7" rx="2" fill="#1E1B18"/>
+                        </svg>
+                        <span class="text-[11px] font-semibold text-stone-500 mt-1">Nasi 150gr + Ayam 90gr + Telur</span>
+                    </div>
+
+                    <div class="flex justify-between items-baseline mb-1.5">
+                        <h3 class="font-serif font-bold text-xl text-ink">Chicken Sambal Matah</h3>
+                        <span class="font-extrabold text-lg text-chili">Rp25.000</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                        Ayam goreng renyah disiram irisan bawang merah, serai, cabai rawit, dan perasan jeruk limau segar.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Daftar Menu -->
-    <section id="menu" class="py-16 bg-stone-50 border-t border-stone-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-orange-500 font-bold text-sm uppercase tracking-wider">Katalog Menu</span>
-                <h2 class="text-3xl font-extrabold text-stone-900 mt-1 mb-3">Pilihan Menu Favorit</h2>
-                <p class="text-stone-600">Semua menu sudah termasuk nasi pulen hangat, telur mata sapi, dan sayuran pelengkap.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Menu 1 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between hover:border-orange-300 transition">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-4xl">🌶️</span>
-                            <span class="bg-red-100 text-red-700 text-xs font-bold px-2.5 py-1 rounded-full">Best Seller</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-2">Chicken Sambal Matah Bowl</h3>
-                        <p class="text-sm text-stone-600 mb-4">Ayam crispy/grill dengan siraman sambal matah segar khas Bali yang pedas dan wangi.</p>
-                    </div>
-                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
-                        <span class="text-xl font-extrabold text-orange-600">Rp25.000</span>
-                        <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20pesan%20Chicken%20Sambal%20Matah%20Bowl." target="_blank"
-                           class="bg-stone-900 hover:bg-orange-500 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">
-                            Pesan +
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Menu 2 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between hover:border-orange-300 transition">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-4xl">🥩</span>
-                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-full">Premium</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-2">Beef Bulgogi Bowl</h3>
-                        <p class="text-sm text-stone-600 mb-4">Irisan daging sapi empuk marinasi saus bulgogi manis-gurih dengan taburan wijen sangrai.</p>
-                    </div>
-                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
-                        <span class="text-xl font-extrabold text-orange-600">Rp32.000</span>
-                        <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20pesan%20Beef%20Bulgogi%20Bowl." target="_blank"
-                           class="bg-stone-900 hover:bg-orange-500 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">
-                            Pesan +
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Menu 3 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between hover:border-orange-300 transition">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-4xl">🥚</span>
-                            <span class="bg-orange-100 text-orange-700 text-xs font-bold px-2.5 py-1 rounded-full">Favorit</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-2">Chicken Salted Egg Bowl</h3>
-                        <p class="text-sm text-stone-600 mb-4">Ayam fillet renyah berbalut saus telur asin creamy gurih dan aroma daun kari harum.</p>
-                    </div>
-                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
-                        <span class="text-xl font-extrabold text-orange-600">Rp28.000</span>
-                        <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20pesan%20Chicken%20Salted%20Egg%20Bowl." target="_blank"
-                           class="bg-stone-900 hover:bg-orange-500 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">
-                            Pesan +
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Menu 4 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between hover:border-orange-300 transition">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-4xl">🔥</span>
-                            <span class="bg-stone-100 text-stone-700 text-xs font-bold px-2.5 py-1 rounded-full">Creamy</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-2">Chicken Mentai Bowl</h3>
-                        <p class="text-sm text-stone-600 mb-4">Ayam panggang lembut dengan siraman saus mentai gurih yang di-torch hingga harum.</p>
-                    </div>
-                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
-                        <span class="text-xl font-extrabold text-orange-600">Rp28.000</span>
-                        <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20pesan%20Chicken%20Mentai%20Bowl." target="_blank"
-                           class="bg-stone-900 hover:bg-orange-500 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">
-                            Pesan +
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Menu 5 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between hover:border-orange-300 transition">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-4xl">🐟</span>
-                            <span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full">Nusantara</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-2">Tuna Sambal Dabu-Dabu</h3>
-                        <p class="text-sm text-stone-600 mb-4">Suwiran ikan tuna segar berbumbu dipadukan sambal dabu-dabu pedas menyegarkan.</p>
-                    </div>
-                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
-                        <span class="text-xl font-extrabold text-orange-600">Rp27.000</span>
-                        <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20pesan%20Tuna%20Sambal%20Dabu-Dabu." target="_blank"
-                           class="bg-stone-900 hover:bg-orange-500 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">
-                            Pesan +
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Menu 6: Paket Hemat -->
-                <div class="bg-orange-50 rounded-2xl p-6 shadow-sm border-2 border-orange-400 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-4xl">🎁</span>
-                            <span class="bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Paket Hemat</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-2">Bundle Berdua + Es Teh</h3>
-                        <p class="text-sm text-stone-700 mb-4">Pilih 2 menu favoritmu + Gratis 1 Es Teh Manis &amp; potongan langsung Rp5.000!</p>
-                    </div>
-                    <div class="pt-4 border-t border-orange-200 flex items-center justify-between">
-                        <span class="text-xl font-extrabold text-orange-600">Mulai Rp45.000</span>
-                        <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20ambil%20Promo%20Bundle%20Berdua." target="_blank"
-                           class="bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">
-                            Klaim Promo
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Daftar Menu Katalog -->
+    <section id="menu" class="py-16 max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="mb-10 text-center sm:text-left">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-chili">Daftar Menu & Harga</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-ink mt-1">Katalog Produk NyamNyam Bowl</h2>
         </div>
-    </section>
 
-    <!-- Promo Banner -->
-    <section id="promo" class="py-14 bg-stone-900 text-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="inline-block bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">PROMO TERBATAS HARI INI</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Beli 2 Porsi GRATIS 1 Es Teh Manis + Diskon Rp5.000!</h2>
-            <p class="text-stone-300 max-w-2xl mx-auto mb-8">
-                Berlaku untuk pembelian langsung di outlet Metland Cileungsi maupun pemesanan via WhatsApp. Kuota terbatas setiap harinya!
-            </p>
-            <a href="https://wa.me/6283878816663?text=Halo%20NyamNyam%20Bowl!%20Saya%20mau%20klaim%20promo%20beli%202%20gratis%20es%20teh." target="_blank"
-               class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl text-base shadow-lg transition">
-                <span>💬 Klaim Promo via WhatsApp Sekarang</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Testimoni -->
-    <section id="testimoni" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-extrabold text-stone-900 mb-3">Kata Pelanggan NyamNyam Bowl</h2>
-                <p class="text-stone-600">Ulasan jujur dari pelanggan setia kami di sekitar Cileungsi.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200">
-                    <div class="text-amber-400 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-                    <p class="text-sm text-stone-700 italic mb-4">"Chicken Sambal Matahnya juara banget! Sambalnya segar, ayamnya nggak pelit, porsinya bikin kenyang sampai sore."</p>
-                    <div class="font-bold text-sm text-stone-900">— Rina, Karyawan Kantor</div>
-                </div>
-                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200">
-                    <div class="text-amber-400 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-                    <p class="text-sm text-stone-700 italic mb-4">"Sering banget pesan buat makan siang bareng teman kampus. Harganya ramah di kantong mahasiswa dan penyajiannya cepat."</p>
-                    <div class="font-bold text-sm text-stone-900">— Dimas, Mahasiswa</div>
-                </div>
-                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200">
-                    <div class="text-amber-400 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-                    <p class="text-sm text-stone-700 italic mb-4">"Anak-anak di rumah suka banget sama Beef Bulgogi dan Salted Egg-nya. Kemasannya rapi, aman dibawa pulang."</p>
-                    <div class="font-bold text-sm text-stone-900">— Ibu Siska, Warga Metland Cileungsi</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lokasi & Footer -->
-    <footer id="lokasi" class="bg-stone-950 text-stone-300 pt-14 pb-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10 pb-10 border-b border-stone-800">
-            <div>
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="text-2xl">🍜</span>
-                    <span class="font-extrabold text-xl text-white">NyamNyam<span class="text-orange-500">Bowl</span></span>
-                </div>
-                <p class="text-sm text-stone-400 leading-relaxed">
-                    Sekali Suap, Bikin Nagih! Sajian rice bowl kekinian berkualitas dengan cita rasa Nusantara &amp; modern.
-                </p>
-            </div>
-            <div>
-                <h4 class="font-bold text-white mb-4">Lokasi &amp; Jam Buka</h4>
-                <ul class="text-sm space-y-2 text-stone-400">
-                    <li>📍 Kawasan Metland Cileungsi, Kab. Bogor, Jawa Barat</li>
-                    <li>🕒 Setiap Hari: 10.00 – 21.00 WIB</li>
-                    <li>🛵 Tersedia di GoFood, GrabFood &amp; ShopeeFood</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-white mb-4">Hubungi Kami</h4>
-                <ul class="text-sm space-y-2 text-stone-400">
-                    <li>📱 WhatsApp: <a href="https://wa.me/6283878816663" class="text-orange-400 hover:underline">0838-7881-6663</a></li>
-                    <li>📸 Instagram: @nyamnyambowl.id</li>
-                    <li>🎵 TikTok: @nyamnyambowl.id</li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 text-center text-xs text-stone-500">
-            &copy; 2026 NyamNyam Bowl Indonesia. All Rights Reserved.
-        </div>
-    </footer>
-
-</body>
-</html>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Item 1 -->
+            <div class="stamp-border-sm bg-white rounded-2xl p-5 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-red-100 text-chili">Best Seller</span>
+                        <span class="font-extrabold text-base text-ink">Rp25.000</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-ink mb-1.5">Chicken Sambal Matah</h3>
+                    <p class="text-xs text-stone-

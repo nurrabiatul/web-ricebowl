@@ -1,490 +1,229 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NyamNyam Bowl — Kedai Rice Bowl Metland Cileungsi</title>
-    <meta name="description" content="NyamNyam Bowl Metland Cileungsi. Nasi hangat, lauk melimpah, sambal segar. Sekali suap, bikin nagih!">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Fraunces"', 'Georgia', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        paper: '#FAF6F0',
-                        ink: '#1E1B18',
-                        chili: '#D9381E',
-                        turmeric: '#E59500',
-                        leaf: '#2D5A27',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #FAF6F0;
-            color: #1E1B18;
-        }
-        .paper-bg {
-            background-image: radial-gradient(rgba(30, 27, 24, 0.06) 1px, transparent 0);
-            background-size: 20px 20px;
-        }
-        .stamp-border {
-            border: 2px solid #1E1B18;
-            box-shadow: 4px 4px 0px #1E1B18;
-        }
-        .stamp-border-sm {
-            border: 1.5px solid #1E1B18;
-            box-shadow: 2.5px 2.5px 0px #1E1B18;
-        }
-        .stamp-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px #1E1B18;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f5ef">
+  <meta name="description" content="NyamNyam Bowl Metland Cileungsi. Rice bowl hangat dengan lauk melimpah, sambal segar, dan harga bersahabat.">
+  <title>NyamNyam Bowl — Rice Bowl Metland Cileungsi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f8f5ef;--ink:#24211e;--muted:#746e66;--red:#b83b2d;--gold:#d9a441;--green:#345b43;--line:#e8e0d5}
+    *{box-sizing:border-box}
+    body{background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}
+    h1,h2,h3,.serif{font-family:"Playfair Display",serif}
+    .eyebrow{letter-spacing:.16em}
+    .soft-shadow{box-shadow:0 16px 45px rgba(48,38,26,.08)}
+    .menu-card{transition:transform .2s ease,box-shadow .2s ease}
+    .menu-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(48,38,26,.09)}
+    .btn-primary{background:var(--red);color:white;transition:.2s}
+    .btn-primary:hover{background:#982f24;transform:translateY(-1px)}
+    .btn-outline{border:1px solid #cfc5b8;transition:.2s}
+    .btn-outline:hover{border-color:var(--ink);background:#fff}
+    .filter-btn[aria-pressed="true"]{background:var(--ink);color:white;border-color:var(--ink)}
+    .modal-backdrop{background:rgba(26,23,20,.58);backdrop-filter:blur(4px)}
+    .no-scroll{overflow:hidden}
+    :focus-visible{outline:3px solid #d9a441;outline-offset:3px}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
 </head>
-<body class="font-sans antialiased selection:bg-chili selection:text-white">
+<body class="antialiased">
+  <div class="bg-[#24211e] px-4 py-2 text-center text-xs font-medium tracking-wide text-white">
+    Setiap hari, 10.00–21.00 WIB <span class="mx-2 text-white/40">•</span> Metland Cileungsi <span class="mx-2 text-white/40">•</span> Pesanan katering & acara tersedia
+  </div>
 
-    <!-- Top Strip Info -->
-    <div class="bg-ink text-paper text-xs py-2 px-4 text-center font-medium tracking-wide">
-        Buka Setiap Hari 10.00 – 21.00 WIB • Area Metland Cileungsi • Terima Pesanan Katering & Acara
+  <header class="sticky top-0 z-40 border-b border-[var(--line)] bg-[rgba(248,245,239,.94)] backdrop-blur-lg">
+    <div class="mx-auto flex h-[76px] max-w-6xl items-center justify-between px-4 sm:px-6">
+      <a href="#" class="flex items-center gap-3" aria-label="NyamNyam Bowl, beranda">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-[var(--red)] font-serif text-xl font-bold text-white">N</span>
+        <span class="leading-tight"><span class="serif block text-lg font-bold sm:text-xl">NyamNyam Bowl</span><span class="text-[10px] font-bold uppercase tracking-[.18em] text-[var(--muted)]">Metland Cileungsi</span></span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-[#625c55] md:flex" aria-label="Navigasi utama">
+        <a class="hover:text-[var(--red)]" href="#menu">Menu</a><a class="hover:text-[var(--red)]" href="#promo">Paket & katering</a><a class="hover:text-[var(--red)]" href="#cerita">Tentang kami</a><a class="hover:text-[var(--red)]" href="#lokasi">Lokasi</a>
+      </nav>
+      <button id="open-cart" class="rounded-full bg-[var(--ink)] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[var(--red)]" type="button">
+        Keranjang saya <span id="cart-badge" class="ml-1 rounded-full bg-white/15 px-2 py-0.5 text-xs">0</span>
+      </button>
     </div>
+  </header>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-sm border-b-2 border-ink">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2.5 group">
-                <div class="w-9 h-9 rounded-full bg-chili text-paper flex items-center justify-center font-serif font-extrabold text-lg border-2 border-ink">
-                    N
-                </div>
-                <div class="leading-none">
-                    <span class="font-serif font-extrabold text-xl tracking-tight text-ink block">NyamNyam Bowl</span>
-                    <span class="text-[10px] uppercase tracking-widest text-stone-600 font-semibold">Metland Cileungsi</span>[cite: 2]
-                </div>
-            </a>
-
-            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-stone-700">
-                <a href="#menu" class="hover:text-chili transition">Daftar Menu</a>
-                <a href="#promo" class="hover:text-chili transition">Paket Hemat</a>
-                <a href="#cerita" class="hover:text-chili transition">Dapur Kami</a>
-                <a href="#lokasi" class="hover:text-chili transition">Lokasi</a>
-            </nav>
-
-            <button onclick="openCart()" class="stamp-border-sm stamp-btn bg-turmeric hover:bg-amber-400 text-ink text-xs sm:text-sm font-bold px-3.5 py-2 rounded-lg transition flex items-center gap-2 cursor-pointer">
-                <span>Simulasi Pesanan</span>
-                <span id="cart-badge" class="bg-ink text-paper text-xs px-1.5 py-0.5 rounded font-bold">0</span>
-            </button>
+  <main>
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#ead8bb]/40 blur-3xl"></div>
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24">
+        <div class="relative">
+          <span class="eyebrow inline-flex rounded-full border border-[#dfd4c6] bg-white/70 px-3 py-1.5 text-[10px] font-bold uppercase text-[var(--green)]">Rice bowl rumahan • Metland Cileungsi</span>
+          <h1 class="serif mt-6 max-w-xl text-4xl font-bold leading-[1.12] sm:text-5xl lg:text-[3.7rem]">Makan enak, <span class="italic text-[var(--red)]">tanpa ribet.</span></h1>
+          <p class="mt-5 max-w-lg text-base leading-8 text-[var(--muted)]">Nasi hangat, lauk melimpah, dan racikan sambal segar. Pilihan praktis untuk makan siang, makan malam, atau berbagi bersama orang tersayang.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#menu" class="btn-primary rounded-full px-6 py-3.5 text-sm font-bold">Jelajahi menu <span aria-hidden="true">→</span></a>
+            <a href="#lokasi" class="btn-outline rounded-full px-6 py-3.5 text-sm font-bold">Lihat lokasi</a>
+          </div>
+          <div class="mt-9 flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-[var(--muted)]">
+            <span>✓ Dimasak saat dipesan</span><span>✓ Porsi mengenyangkan</span><span>✓ Bisa pesan katering</span>
+          </div>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="paper-bg border-b-2 border-ink">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20 grid md:grid-cols-12 gap-10 items-center">
-            <div class="md:col-span-7">
-                <div class="inline-block border border-ink bg-white px-3 py-1 rounded-full text-xs font-bold mb-5">
-                    100% Halal • Masak Dadakan Saat Dipesan[cite: 2]
-                </div>
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-ink leading-[1.12] mb-5">
-                    Nasi Hangat, Lauk Melimpah. <span class="text-chili italic">Sekali Suap, Bikin Nagih!</span>[cite: 2]
-                </h1>
-                <p class="text-stone-700 text-base sm:text-lg leading-relaxed mb-7 max-w-xl">
-                    Nggak sempat masak atau bingung cari makan siang di sekitar Metland Cileungsi? Cobain racikan rice bowl rumahan dengan sambal segar dan saus spesial yang pas di kantong.[cite: 2]
-                </p>
-                <div class="flex flex-wrap items-center gap-3.5">
-                    <a href="#menu" class="stamp-border stamp-btn bg-chili hover:bg-red-700 text-white font-bold px-6 py-3.5 rounded-xl text-sm sm:text-base transition">
-                        Lihat Buku Menu
-                    </a>
-                    <a href="#lokasi" class="stamp-border-sm stamp-btn bg-white hover:bg-stone-100 text-ink font-bold px-5 py-3.5 rounded-xl text-sm sm:text-base transition">
-                        Lokasi Outlet
-                    </a>
-                </div>
+        <div class="relative">
+          <div class="soft-shadow rounded-[2rem] border border-white bg-white p-3">
+            <div class="rounded-[1.5rem] bg-[#f1e6d6] p-7 sm:p-10">
+              <div class="mx-auto flex aspect-square max-w-[340px] items-center justify-center rounded-full bg-[#e6d3b9]">
+                <svg viewBox="0 0 320 260" role="img" aria-label="Ilustrasi rice bowl berisi nasi, ayam, dan telur" class="w-full drop-shadow-xl">
+                  <path d="M105 70c-5-14 12-18 7-32M158 60c-5-14 12-18 7-32M211 70c-5-14 12-18 7-32" fill="none" stroke="#b83b2d" stroke-width="5" stroke-linecap="round"/>
+                  <ellipse cx="160" cy="112" rx="112" ry="49" fill="#fffdf8" stroke="#24211e" stroke-width="5"/>
+                  <path d="M51 112h218c-8 75-48 113-109 113S59 187 51 112Z" fill="#b83b2d" stroke="#24211e" stroke-width="5"/>
+                  <path d="M58 133h204" stroke="#f8f5ef" stroke-width="4" stroke-dasharray="10 8"/>
+                  <path d="M79 106c8-31 43-40 64-19 15 16-8 32-37 31-20 0-31-4-27-12Z" fill="#d98c38" stroke="#24211e" stroke-width="4"/>
+                  <circle cx="197" cy="91" r="27" fill="#f5d66c" stroke="#24211e" stroke-width="4"/><circle cx="197" cy="91" r="12" fill="#e59b28"/>
+                  <path d="M133 77c9-9 17-7 24 0M147 119l8-5M114 91l5-4" stroke="#345b43" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="173" cy="120" r="4" fill="#b83b2d"/><circle cx="225" cy="118" r="4" fill="#345b43"/>
+                </svg>
+              </div>
+              <div class="mt-5 text-center"><span class="eyebrow text-[10px] font-bold uppercase text-[var(--red)]">Favorit pelanggan</span><h2 class="serif mt-1 text-2xl font-bold">Chicken Sambal Matah</h2><p class="mt-1 text-sm text-[var(--muted)]">Ayam crispy, telur, dan sambal matah segar</p></div>
             </div>
-
-            <!-- Kartu Menu Andalan -->
-            <div class="md:col-span-5">
-                <div class="stamp-border bg-white rounded-2xl p-5 sm:p-6 relative">
-                    <div class="flex items-center justify-between border-b-2 border-dashed border-stone-300 pb-3 mb-4">
-                        <span class="text-xs font-extrabold uppercase tracking-wider text-chili">★ Paling Sering Dipesan</span>[cite: 2]
-                        <span class="text-xs font-bold bg-leaf text-white px-2.5 py-0.5 rounded">Ready Stock</span>[cite: 2]
-                    </div>
-
-                    <!-- Ilustrasi SVG Custom Bowl -->
-                    <div class="bg-[#FDF2E3] border border-stone-200 rounded-xl p-5 mb-4 flex flex-col items-center justify-center">
-                        <svg class="w-32 h-28" viewBox="0 0 160 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M55 24C55 18 61 16 61 10" stroke="#D9381E" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M80 20C80 14 86 12 86 6" stroke="#D9381E" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M105 24C105 18 111 16 111 10" stroke="#D9381E" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M32 62C32 42 54 32 80 32C106 32 128 42 128 62H32Z" fill="#FFFFFF" stroke="#1E1B18" stroke-width="2.5"/>
-                            <circle cx="96" cy="48" r="11" fill="#FDE68A" stroke="#1E1B18" stroke-width="2"/>
-                            <circle cx="96" cy="48" r="5" fill="#E59500"/>
-                            <path d="M46 54C50 45 64 44 72 52C76 56 68 61 56 61C46 61 44 58 46 54Z" fill="#D97706" stroke="#1E1B18" stroke-width="2"/>
-                            <circle cx="76" cy="42" r="2.5" fill="#D9381E"/>
-                            <circle cx="66" cy="45" r="2" fill="#2D5A27"/>
-                            <circle cx="82" cy="56" r="2.5" fill="#D9381E"/>
-                            <path d="M24 62H136C136 92 114 112 80 112C46 112 24 92 24 62Z" fill="#D9381E" stroke="#1E1B18" stroke-width="2.5"/>
-                            <path d="M26 74H134" stroke="#FAF6F0" stroke-width="2" stroke-dasharray="6 4"/>
-                            <rect x="60" y="112" width="40" height="7" rx="2" fill="#1E1B18"/>
-                        </svg>
-                        <span class="text-[11px] font-semibold text-stone-500 mt-1">Nasi 150gr + Ayam 90gr + Telur</span>[cite: 2]
-                    </div>
-
-                    <div class="flex justify-between items-baseline mb-1.5">
-                        <h3 class="font-serif font-bold text-xl text-ink">Chicken Sambal Matah</h3>
-                        <span class="font-extrabold text-lg text-chili">Rp25.000</span>[cite: 2]
-                    </div>
-                    <p class="text-xs sm:text-sm text-stone-600 mb-4 leading-relaxed">
-                        Ayam goreng renyah disiram irisan bawang merah, serai, cabai rawit, dan perasan jeruk limau segar.[cite: 2]
-                    </p>
-                    <button onclick="addToCart('Chicken Sambal Matah Bowl', 25000)"
-                            class="w-full stamp-border-sm stamp-btn bg-ink hover:bg-stone-800 text-paper font-bold py-2.5 rounded-xl text-sm transition cursor-pointer">
-                        + Tambah ke Daftar Pilihan
-                    </button>
-                </div>
-            </div>
+            <div class="flex items-center justify-between px-4 py-4"><span class="text-xs font-semibold text-[var(--muted)]">Mulai dari menu favorit</span><strong class="text-lg text-[var(--red)]">Rp25.000</strong></div>
+          </div>
+          <span class="absolute -right-3 -top-4 rounded-full bg-[var(--green)] px-4 py-2 text-xs font-bold text-white shadow-lg sm:right-0">Freshly made</span>
         </div>
+      </div>
     </section>
 
-    <!-- Daftar Menu Interaktif -->
-    <section id="menu" class="py-16 max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-            <div>
-                <span class="text-xs font-extrabold uppercase tracking-widest text-chili">Buku Menu</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-ink mt-1">Mau Makan Apa Hari Ini?</h2>[cite: 2]
-            </div>
-            <!-- Filter Kategori -->
-            <div class="flex flex-wrap gap-2" id="filter-buttons">
-                <button onclick="filterMenu('all', this)" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-bold border-2 border-ink bg-ink text-paper cursor-pointer">Semua Menu</button>
-                <button onclick="filterMenu('pedas', this)" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-bold border-2 border-ink bg-white text-ink hover:bg-stone-100 cursor-pointer">Pedas Nusantara</button>
-                <button onclick="filterMenu('gurih', this)" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-bold border-2 border-ink bg-white text-ink hover:bg-stone-100 cursor-pointer">Gurih & Creamy</button>
-            </div>
+    <section id="menu" class="scroll-mt-24 border-y border-[var(--line)] bg-white/55 py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div><span class="eyebrow text-[10px] font-bold uppercase text-[var(--red)]">Dari dapur kami</span><h2 class="serif mt-2 text-3xl font-bold sm:text-4xl">Temukan bowl favoritmu.</h2><p class="mt-2 text-sm text-[var(--muted)]">Pilih menu, tambahkan ke daftar, lalu lihat estimasi totalnya.</p></div>
+          <div class="flex flex-wrap gap-2" role="group" aria-label="Filter menu">
+            <button class="filter-btn rounded-full border px-4 py-2 text-xs font-bold" data-filter="all" aria-pressed="true">Semua</button>
+            <button class="filter-btn rounded-full border px-4 py-2 text-xs font-bold" data-filter="pedas" aria-pressed="false">Pedas</button>
+            <button class="filter-btn rounded-full border px-4 py-2 text-xs font-bold" data-filter="gurih" aria-pressed="false">Gurih & creamy</button>
+          </div>
         </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-grid">
-            <!-- Item 1 -->
-            <div class="menu-card stamp-border-sm bg-white rounded-2xl p-5 flex flex-col justify-between" data-category="pedas">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-red-100 text-chili">Best Seller</span>
-                        <span class="font-extrabold text-base text-ink">Rp25.000</span>
-                    </div>
-                    <h3 class="font-serif font-bold text-lg text-ink mb-1.5">Chicken Sambal Matah</h3>
-                    <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                        Nasi pulen hangat, potongan ayam crispy, telur mata sapi, dan sambal matah Bali yang pedas wangi.[cite: 2]
-                    </p>
-                </div>
-                <button onclick="addToCart('Chicken Sambal Matah', 25000)" class="w-full py-2 rounded-lg border-2 border-ink font-bold text-xs hover:bg-turmeric transition cursor-pointer">
-                    + Catat ke Daftar
-                </button>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="menu-card stamp-border-sm bg-white rounded-2xl p-5 flex flex-col justify-between" data-category="gurih">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-amber-100 text-amber-800">Daging Sapi</span>
-                        <span class="font-extrabold text-base text-ink">Rp32.000</span>
-                    </div>
-                    <h3 class="font-serif font-bold text-lg text-ink mb-1.5">Beef Bulgogi Bowl</h3>
-                    <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                        Irisan daging sapi empuk dimasak dengan saus bulgogi manis-gurih, taburan wijen sangrai, dan telur.[cite: 2]
-                    </p>
-                </div>
-                <button onclick="addToCart('Beef Bulgogi Bowl', 32000)" class="w-full py-2 rounded-lg border-2 border-ink font-bold text-xs hover:bg-turmeric transition cursor-pointer">
-                    + Catat ke Daftar
-                </button>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="menu-card stamp-border-sm bg-white rounded-2xl p-5 flex flex-col justify-between" data-category="gurih">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-yellow-100 text-yellow-800">Favorit</span>
-                        <span class="font-extrabold text-base text-ink">Rp28.000</span>
-                    </div>
-                    <h3 class="font-serif font-bold text-lg text-ink mb-1.5">Chicken Salted Egg</h3>
-                    <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                        Ayam fillet renyah dibalut saus kuning telur asin creamy gurih dengan aroma daun kari.[cite: 2]
-                    </p>
-                </div>
-                <button onclick="addToCart('Chicken Salted Egg', 28000)" class="w-full py-2 rounded-lg border-2 border-ink font-bold text-xs hover:bg-turmeric transition cursor-pointer">
-                    + Catat ke Daftar
-                </button>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="menu-card stamp-border-sm bg-white rounded-2xl p-5 flex flex-col justify-between" data-category="gurih">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-orange-100 text-orange-800">Creamy</span>
-                        <span class="font-extrabold text-base text-ink">Rp28.000</span>
-                    </div>
-                    <h3 class="font-serif font-bold text-lg text-ink mb-1.5">Chicken Mentai Bowl</h3>
-                    <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                        Ayam panggang bumbu gurih dengan siraman saus mentai spesial yang di-torch hingga harum.[cite: 2]
-                    </p>
-                </div>
-                <button onclick="addToCart('Chicken Mentai Bowl', 28000)" class="w-full py-2 rounded-lg border-2 border-ink font-bold text-xs hover:bg-turmeric transition cursor-pointer">
-                    + Catat ke Daftar
-                </button>
-            </div>
-
-            <!-- Item 5 -->
-            <div class="menu-card stamp-border-sm bg-white rounded-2xl p-5 flex flex-col justify-between" data-category="pedas">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-emerald-100 text-leaf">Menu Ikan</span>
-                        <span class="font-extrabold text-base text-ink">Rp27.000</span>
-                    </div>
-                    <h3 class="font-serif font-bold text-lg text-ink mb-1.5">Tuna Sambal Dabu-Dabu</h3>
-                    <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                        Suwiran ikan tuna segar berbumbu gurih dipadukan sambal dabu-dabu tomat segar yang pedas nendang.[cite: 2]
-                    </p>
-                </div>
-                <button onclick="addToCart('Tuna Sambal Dabu-Dabu', 27000)" class="w-full py-2 rounded-lg border-2 border-ink font-bold text-xs hover:bg-turmeric transition cursor-pointer">
-                    + Catat ke Daftar
-                </button>
-            </div>
-
-            <!-- Item 6: Paket Hemat -->
-            <div class="menu-card stamp-border-sm bg-[#FFF3D6] rounded-2xl p-5 flex flex-col justify-between" data-category="pedas gurih">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-chili text-white">Paket Berdua</span>
-                        <span class="font-extrabold text-base text-chili">Rp45.000</span>
-                    </div>
-                    <h3 class="font-serif font-bold text-lg text-ink mb-1.5">Bundle Hemat + Es Teh</h3>
-                    <p class="text-xs text-stone-700 leading-relaxed mb-4">
-                        2 porsi Chicken Sambal Matah + Gratis 1 Es Teh Manis. Cocok buat makan bareng teman kantor atau keluarga.[cite: 2]
-                    </p>
-                </div>
-                <button onclick="addToCart('Paket Bundle Hemat + Es Teh', 45000)" class="w-full py-2 rounded-lg bg-chili text-white border-2 border-ink font-bold text-xs hover:bg-red-700 transition cursor-pointer">
-                    + Catat Paket Promo
-                </button>
-            </div>
+        <div id="menu-grid" class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="menu-card flex flex-col rounded-2xl border border-[var(--line)] bg-white p-5" data-category="pedas">
+            <div class="mb-4 flex items-center justify-between"><span class="rounded-full bg-[#f8e8e3] px-3 py-1 text-[10px] font-bold uppercase text-[var(--red)]">Best seller</span><strong class="text-sm">Rp25.000</strong></div><h3 class="serif text-xl font-bold">Chicken Sambal Matah</h3><p class="mt-2 flex-1 text-sm leading-6 text-[var(--muted)]">Nasi pulen hangat, ayam crispy, telur mata sapi, dan sambal matah Bali yang pedas wangi.</p><button class="add-btn btn-outline mt-5 rounded-xl px-4 py-3 text-sm font-bold" data-name="Chicken Sambal Matah" data-price="25000">+ Tambah ke keranjang</button>
+          </article>
+          <article class="menu-card flex flex-col rounded-2xl border border-[var(--line)] bg-white p-5" data-category="gurih">
+            <div class="mb-4 flex items-center justify-between"><span class="rounded-full bg-[#f6eddb] px-3 py-1 text-[10px] font-bold uppercase text-[#90651b]">Daging sapi</span><strong class="text-sm">Rp32.000</strong></div><h3 class="serif text-xl font-bold">Beef Bulgogi Bowl</h3><p class="mt-2 flex-1 text-sm leading-6 text-[var(--muted)]">Irisan daging sapi empuk dengan saus bulgogi manis-gurih, wijen sangrai, dan telur.</p><button class="add-btn btn-outline mt-5 rounded-xl px-4 py-3 text-sm font-bold" data-name="Beef Bulgogi Bowl" data-price="32000">+ Tambah ke keranjang</button>
+          </article>
+          <article class="menu-card flex flex-col rounded-2xl border border-[var(--line)] bg-white p-5" data-category="gurih">
+            <div class="mb-4 flex items-center justify-between"><span class="rounded-full bg-[#f6eddb] px-3 py-1 text-[10px] font-bold uppercase text-[#90651b]">Favorit</span><strong class="text-sm">Rp28.000</strong></div><h3 class="serif text-xl font-bold">Chicken Salted Egg</h3><p class="mt-2 flex-1 text-sm leading-6 text-[var(--muted)]">Ayam fillet renyah dibalut saus kuning telur asin creamy dengan aroma daun kari.</p><button class="add-btn btn-outline mt-5 rounded-xl px-4 py-3 text-sm font-bold" data-name="Chicken Salted Egg" data-price="28000">+ Tambah ke keranjang</button>
+          </article>
+          <article class="menu-card flex flex-col rounded-2xl border border-[var(--line)] bg-white p-5" data-category="gurih">
+            <div class="mb-4 flex items-center justify-between"><span class="rounded-full bg-[#f6eddb] px-3 py-1 text-[10px] font-bold uppercase text-[#90651b]">Creamy</span><strong class="text-sm">Rp28.000</strong></div><h3 class="serif text-xl font-bold">Chicken Mentai Bowl</h3><p class="mt-2 flex-1 text-sm leading-6 text-[var(--muted)]">Ayam panggang berbumbu gurih dengan saus mentai spesial yang di-torch hingga harum.</p><button class="add-btn btn-outline mt-5 rounded-xl px-4 py-3 text-sm font-bold" data-name="Chicken Mentai Bowl" data-price="28000">+ Tambah ke keranjangn</button>
+          </article>
+          <article class="menu-card flex flex-col rounded-2xl border border-[var(--line)] bg-white p-5" data-category="pedas">
+            <div class="mb-4 flex items-center justify-between"><span class="rounded-full bg-[#e7efe8] px-3 py-1 text-[10px] font-bold uppercase text-[var(--green)]">Menu ikan</span><strong class="text-sm">Rp27.000</strong></div><h3 class="serif text-xl font-bold">Tuna Sambal Dabu-Dabu</h3><p class="mt-2 flex-1 text-sm leading-6 text-[var(--muted)]">Suwiran ikan tuna berbumbu gurih dipadukan sambal dabu-dabu tomat segar yang pedas.</p><button class="add-btn btn-outline mt-5 rounded-xl px-4 py-3 text-sm font-bold" data-name="Tuna Sambal Dabu-Dabu" data-price="27000">+ Tambah ke keranjangn</button>
+          </article>
+          <article class="menu-card flex flex-col rounded-2xl border border-[#ead8b6] bg-[#fbf3e5] p-5" data-category="pedas gurih">
+            <div class="mb-4 flex items-center justify-between"><span class="rounded-full bg-[var(--red)] px-3 py-1 text-[10px] font-bold uppercase text-white">Paket berdua</span><strong class="text-sm text-[var(--red)]">Rp45.000</strong></div><h3 class="serif text-xl font-bold">Bundle Hemat + Es Teh</h3><p class="mt-2 flex-1 text-sm leading-6 text-[var(--muted)]">2 porsi Chicken Sambal Matah + gratis 1 Es Teh Manis. Pas untuk makan bareng.</p><button class="add-btn mt-5 rounded-xl bg-[var(--ink)] px-4 py-3 text-sm font-bold text-white transition hover:bg-[var(--red)]" data-name="Paket Bundle Hemat + Es Teh" data-price="45000">+ Tambah paket</button>
+          </article>
         </div>
+        <p id="empty-filter" class="hidden py-10 text-center text-sm text-[var(--muted)]">Belum ada menu dalam kategori ini.</p>
+      </div>
     </section>
 
-    <!-- Banner Promo & Katering -->
-    <section id="promo" class="py-10 px-4 sm:px-6">
-        <div class="max-w-5xl mx-auto stamp-border bg-leaf text-paper rounded-2xl p-6 sm:p-10 grid md:grid-cols-3 gap-6 items-center">
-            <div class="md:col-span-2">
-                <span class="inline-block bg-turmeric text-ink text-xs font-extrabold px-2.5 py-1 rounded mb-3">INFO PESANAN ACARA & KANTOR</span>
-                <h2 class="font-serif text-2xl sm:text-3xl font-extrabold mb-2">Butuh Konsumsi Rapat atau Acara Ulang Tahun?</h2>[cite: 2]
-                <p class="text-sm text-emerald-100 leading-relaxed">
-                    NyamNyam Bowl menerima pesanan dalam jumlah besar (<em>bulk order</em>) dengan kemasan rapi, higienis, dan potongan harga khusus untuk area Cileungsi & Cibubur.[cite: 2]
-                </p>
-            </div>
-            <div class="md:text-right">
-                <a href="#lokasi" class="inline-block stamp-border-sm stamp-btn bg-paper text-ink font-bold px-5 py-3.5 rounded-xl text-sm hover:bg-amber-50 transition">
-                    Kunjungi Outlet Kami →
-                </a>
-            </div>
-        </div>
+    <section id="promo" class="scroll-mt-24 py-16 sm:py-20">
+      <div class="mx-auto grid max-w-6xl gap-8 rounded-[2rem] bg-[var(--green)] px-6 py-9 text-white sm:px-10 md:grid-cols-[1fr_auto] md:items-center">
+        <div><span class="eyebrow text-[10px] font-bold uppercase text-[#e8c77e]">Untuk kantor & acara</span><h2 class="serif mt-3 max-w-2xl text-3xl font-bold leading-tight sm:text-4xl">Ada acara? Biar urusan makan kami yang siapkan.</h2><p class="mt-4 max-w-2xl text-sm leading-7 text-white/75">Kami menerima pesanan dalam jumlah besar untuk rapat, ulang tahun, dan acara keluarga. Tersedia kemasan rapi untuk area Cileungsi dan Cibubur.</p></div>
+        <a href="#lokasi" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-bold text-[var(--green)] transition hover:bg-[#f4e8d6]">Hubungi outlet <span class="ml-2">→</span></a>
+      </div>
     </section>
 
-    <!-- Dapur Kami & Testimoni Warga Lokal -->
-    <section id="cerita" class="py-14 max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="grid md:grid-cols-2 gap-10 items-start">
-            <div>
-                <span class="text-xs font-extrabold uppercase tracking-widest text-chili">Komitmen Dapur Kami</span>
-                <h2 class="font-serif text-3xl font-extrabold text-ink mt-1 mb-4">Kenapa Warga Cileungsi Suka NyamNyam Bowl?</h2>[cite: 2]
-                <p class="text-sm text-stone-700 leading-relaxed mb-6">
-                    Kami percaya makanan praktis tidak harus mengorbankan rasa dan kebersihan. Setiap porsi dimasak segar saat pesanan masuk menggunakan bahan baku pilihan setiap pagi.[cite: 2]
-                </p>
-                <div class="space-y-3 text-sm">
-                    <div class="flex items-start gap-3">
-                        <span class="font-bold text-chili">01.</span>
-                        <div><strong class="text-ink">Porsi Pas & Mengenyangkan:</strong> Takaran nasi 150gr dan lauk 90gr yang seimbang.[cite: 2]</div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="font-bold text-chili">02.</span>
-                        <div><strong class="text-ink">Kemasan Bowl Food-Grade:</strong> Kokoh, tahan panas, dan aman dibawa perjalanan.[cite: 2]</div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="font-bold text-chili">03.</span>
-                        <div><strong class="text-ink">Cepat Tanpa Antre Lama:</strong> Rata-rata penyajian hanya 5–7 menit.[cite: 2]</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ulasan Pelanggan -->
-            <div class="space-y-4">
-                <div class="stamp-border-sm bg-white p-4 rounded-xl">
-                    <p class="text-xs sm:text-sm text-stone-700 italic mb-2">"Sambal matahnya segar banget, nggak bau langu dan ayamnya tetap renyah pas sampai rumah. Anak-anak di rumah juga suka yang Salted Egg."</p>[cite: 2]
-                    <div class="text-xs font-bold text-ink">— Ibu Siska, Warga Metland Cileungsi</div>[cite: 2]
-                </div>
-                <div class="stamp-border-sm bg-white p-4 rounded-xl">
-                    <p class="text-xs sm:text-sm text-stone-700 italic mb-2">"Langganan makan siang pas jam istirahat kantor. Porsinya bikin kenyang sampai sore dan harganya ramah di kantong."</p>[cite: 2]
-                    <div class="text-xs font-bold text-ink">— Rina, Karyawan Area Cileungsi</div>[cite: 2]
-                </div>
-                <div class="stamp-border-sm bg-white p-4 rounded-xl">
-                    <p class="text-xs sm:text-sm text-stone-700 italic mb-2">"Beef Bulgoginya empuk dan bumbunya meresap. Kemasannya juga rapi banget jadi gampang dimakan di mana aja."</p>[cite: 2]
-                    <div class="text-xs font-bold text-ink">— Dimas, Mahasiswa</div>[cite: 2]
-                </div>
-            </div>
+    <section id="cerita" class="scroll-mt-24 border-t border-[var(--line)] bg-white/55 py-16 sm:py-20">
+      <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-2">
+        <div><span class="eyebrow text-[10px] font-bold uppercase text-[var(--red)]">Komitmen dapur kami</span><h2 class="serif mt-2 text-3xl font-bold sm:text-4xl">Sederhana, segar, dan dibuat sepenuh hati.</h2><p class="mt-4 text-sm leading-7 text-[var(--muted)]">Kami percaya makanan praktis tetap bisa terasa istimewa. Setiap porsi disiapkan saat pesanan masuk dengan bahan pilihan.</p>
+          <div class="mt-7 space-y-5"><div class="flex gap-4"><span class="serif text-2xl font-bold text-[var(--red)]">01</span><div><h3 class="font-bold">Porsi pas & mengenyangkan</h3><p class="mt-1 text-sm text-[var(--muted)]">Takaran nasi 150 gram dan lauk 90 gram.</p></div></div><div class="flex gap-4"><span class="serif text-2xl font-bold text-[var(--red)]">02</span><div><h3 class="font-bold">Kemasan food-grade</h3><p class="mt-1 text-sm text-[var(--muted)]">Kemasan praktis untuk dibawa dan dinikmati.</p></div></div><div class="flex gap-4"><span class="serif text-2xl font-bold text-[var(--red)]">03</span><div><h3 class="font-bold">Disiapkan saat dipesan</h3><p class="mt-1 text-sm text-[var(--muted)]">Agar hidangan tersaji hangat dan nikmat.</p></div></div></div>
         </div>
+        <div class="rounded-[2rem] bg-[#efe7dc] p-7 sm:p-9"><span class="eyebrow text-[10px] font-bold uppercase text-[var(--red)]">Yang jadi favorit</span><blockquote class="serif mt-4 text-2xl font-semibold leading-snug">“Sambal matahnya segar, ayamnya renyah, dan porsinya bikin kenyang.”</blockquote><p class="mt-5 text-xs font-semibold text-[var(--muted)]">— Gambaran pengalaman pelanggan</p><p class="mt-8 border-t border-[#d8cbbb] pt-5 text-xs leading-6 text-[var(--muted)]">Catatan: testimoni di materi awal belum diverifikasi. Gunakan ulasan pelanggan asli dengan izin sebelum dipublikasikan.</p></div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer & Lokasi -->
-    <footer id="lokasi" class="bg-ink text-paper border-t-2 border-ink pt-12 pb-8">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8 pb-8 border-b border-stone-800">
-            <div>
-                <h3 class="font-serif font-extrabold text-xl text-white mb-2">NyamNyam Bowl</h3>
-                <p class="text-xs text-stone-400 leading-relaxed">
-                    Sekali Suap, Bikin Nagih! Sajian rice bowl hangat dengan cita rasa Nusantara & modern.[cite: 2]
-                </p>
-            </div>
-            <div>
-                <h4 class="font-bold text-sm text-turmeric mb-2">Lokasi Outlet</h4>
-                <p class="text-xs text-stone-300 leading-relaxed">
-                    Kawasan Metland Cileungsi, Kab. Bogor, Jawa Barat.<br>
-                    Buka Setiap Hari: 10.00 – 21.00 WIB[cite: 2]
-                </p>
-            </div>
-            <div>
-                <h4 class="font-bold text-sm text-turmeric mb-2">Media Sosial & Platform</h4>
-                <ul class="text-xs text-stone-300 space-y-1.5">
-                    <li>Instagram & TikTok: @nyamnyambowl.id</li>
-                    <li>Tersedia di GoFood, GrabFood & ShopeeFood[cite: 2]</li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-400 gap-2">
-            <span>© 2026 NyamNyam Bowl Metland Cileungsi.</span>
-            <span>100% Halal • Katalog Digital</span>
-        </div>
-    </footer>
-
-    <!-- Modal Simulasi Hitung Harga Katalog (Hanya Tampil di Layar, Tidak Mengarah ke WA) -->
-    <div id="cart-modal" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
-        <div class="stamp-border bg-paper w-full max-w-md rounded-2xl p-6 relative">
-            <div class="flex justify-between items-center border-b-2 border-ink pb-3 mb-4">
-                <h3 class="font-serif font-extrabold text-xl text-ink">Daftar Pilihan Menu</h3>
-                <button onclick="closeCart()" class="text-sm font-bold px-2.5 py-1 border border-ink rounded bg-white hover:bg-stone-100 cursor-pointer">Tutup ✕</button>
-            </div>
-
-            <div id="cart-items" class="space-y-3 max-h-60 overflow-y-auto mb-4 text-sm">
-                <p class="text-stone-500 text-center py-6">Belum ada menu yang dicatat. Silakan pilih dari buku menu.</p>
-            </div>
-
-            <div class="border-t-2 border-dashed border-stone-300 pt-3 mb-4 flex justify-between items-center font-extrabold text-base">
-                <span>Total Estimasi Harga</span>
-                <span id="cart-total" class="text-chili">Rp0</span>
-            </div>
-
-            <div class="bg-amber-50 border border-amber-300 rounded-lg p-3 text-xs text-stone-700 mb-4">
-                💡 Tunjukkan daftar pilihan ini langsung ke kasir di outlet <strong>NyamNyam Bowl Metland Cileungsi</strong> saat berkunjung.
-            </div>
-
-            <button onclick="clearCart()" class="w-full py-2.5 rounded-xl border-2 border-ink bg-white hover:bg-stone-100 text-ink font-bold text-xs transition cursor-pointer">
-                Hapus Semua Daftar
-            </button>
-        </div>
+  <footer id="lokasi" class="scroll-mt-20 bg-[var(--ink)] py-12 text-white">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 md:grid-cols-3">
+      <div><h2 class="serif text-2xl font-bold">NyamNyam Bowl</h2><p class="mt-3 max-w-xs text-sm leading-6 text-white/60">Sekali suap, bikin nagih. Rice bowl hangat dengan cita rasa Nusantara dan modern.</p></div>
+      <div><h3 class="font-bold text-[#e8c77e]">Kunjungi outlet</h3><p class="mt-3 text-sm leading-7 text-white/70">Kawasan Metland Cileungsi,<br>Kabupaten Bogor, Jawa Barat.<br>Setiap hari, 10.00–21.00 WIB.</p></div>
+      <div><h3 class="font-bold text-[#e8c77e]">Temukan kami</h3><p class="mt-3 text-sm leading-7 text-white/70">Instagram & TikTok: @nyamnyambowl.id<br>Tersedia di GoFood, GrabFood, dan ShopeeFood.</p></div>
     </div>
+    <div class="mx-auto mt-9 max-w-6xl border-t border-white/10 px-4 pt-6 text-xs text-white/40 sm:px-6">© 2026 NyamNyam Bowl Metland Cileungsi.</div>
+  </footer>
 
-    <script>
-        let cart = [];
+  <div id="cart-modal" class="modal-backdrop fixed inset-0 z-50 hidden items-end justify-center p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <div class="w-full max-w-lg rounded-t-3xl bg-[var(--paper)] p-5 shadow-2xl sm:rounded-3xl sm:p-7">
+      <div class="flex items-center justify-between border-b border-[var(--line)] pb-4"><div><span class="eyebrow text-[10px] font-bold uppercase text-[var(--red)]">Ringkasan</span><h2 id="cart-title" class="serif mt-1 text-2xl font-bold">Daftar menu</h2></div><button id="close-cart" class="rounded-full border border-[var(--line)] px-3 py-2 text-sm font-bold" aria-label="Tutup daftar pilihan">✕</button></div>
+      <div id="cart-items" class="my-5 max-h-[45vh] space-y-3 overflow-y-auto"><p class="py-8 text-center text-sm text-[var(--muted)]">Belum ada menu yang dipilih. Yuk, jelajahi menu kami.</p></div>
+      <div class="flex items-center justify-between border-t border-dashed border-[#d6cabc] py-4"><span class="text-sm font-semibold">Estimasi total</span><strong id="cart-total" class="text-xl text-[var(--red)]">Rp0</strong></div>
+      <p class="mb-4 rounded-xl bg-[#efe7dc] p-3 text-xs leading-5 text-[var(--muted)]">Ini simulasi daftar pilihan, bukan pemesanan online. Tunjukkan daftar ini ke kasir saat berkunjung.</p>
+      <button id="clear-cart" class="w-full rounded-xl border border-[var(--line)] bg-white py-3 text-sm font-bold transition hover:border-[var(--red)] hover:text-[var(--red)]">Hapus semua menu</button>
+    </div>
+  </div>
 
-        function formatRupiah(num) {
-            return 'Rp' + num.toLocaleString('id-ID');
-        }
+  <script>
+    const cart = [];
+    const rupiah = value => new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(value);
+    const modal = document.getElementById('cart-modal');
+    const cartItems = document.getElementById('cart-items');
 
-        function addToCart(name, price) {
-            const existing = cart.find(item => item.name === name);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ name, price, qty: 1 });
-            }
-            updateCartUI();
-            openCart();
-        }
-
-        function changeQty(index, delta) {
-            cart[index].qty += delta;
-            if (cart[index].qty <= 0) {
-                cart.splice(index, 1);
-            }
-            updateCartUI();
-        }
-
-        function clearCart() {
-            cart = [];
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const badge = document.getElementById('cart-badge');
-            const container = document.getElementById('cart-items');
-            const totalEl = document.getElementById('cart-total');
-
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            badge.textContent = totalQty;
-
-            if (cart.length === 0) {
-                container.innerHTML = '<p class="text-stone-500 text-center py-6">Belum ada menu yang dicatat. Silakan pilih dari buku menu.</p>';
-                totalEl.textContent = 'Rp0';
-                return;
-            }
-
-            let html = '';
-            let total = 0;
-            cart.forEach((item, idx) => {
-                const sub = item.price * item.qty;
-                total += sub;
-                html += `
-                    <div class="flex items-center justify-between bg-white p-2.5 rounded-lg border border-ink">
-                        <div>
-                            <div class="font-bold text-xs text-ink">${item.name}</div>
-                            <div class="text-[11px] text-stone-500">${formatRupiah(item.price)} x ${item.qty}</div>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <button onclick="changeQty(${idx}, -1)" class="w-6 h-6 rounded border border-ink font-bold text-xs bg-stone-100 cursor-pointer">-</button>
-                            <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
-                            <button onclick="changeQty(${idx}, 1)" class="w-6 h-6 rounded border border-ink font-bold text-xs bg-turmeric cursor-pointer">+</button>
-                        </div>
-                    </div>
-                `;
-            });
-            container.innerHTML = html;
-            totalEl.textContent = formatRupiah(total);
-        }
-
-        function openCart() {
-            document.getElementById('cart-modal').classList.remove('hidden');
-        }
-
-        function closeCart() {
-            document.getElementById('cart-modal').classList.add('hidden');
-        }
-
-        function filterMenu(category, clickedBtn) {
-            const cards = document.querySelectorAll('.menu-card');
-            const buttons = document.querySelectorAll('.filter-btn');
-
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-ink', 'text-paper');
-                btn.classList.add('bg-white', 'text-ink');
-            });
-            clickedBtn.classList.remove('bg-white', 'text-ink');
-            clickedBtn.classList.add('bg-ink', 'text-paper');
-
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category.includes(category)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    function renderCart(){
+      const qty = cart.reduce((sum,item)=>sum+item.qty,0);
+      const total = cart.reduce((sum,item)=>sum+item.price*item.qty,0);
+      document.getElementById('cart-badge').textContent = qty;
+      document.getElementById('cart-total').textContent = rupiah(total);
+      if(!cart.length){
+        cartItems.innerHTML = '<p class="py-8 text-center text-sm text-[var(--muted)]">Belum ada menu yang dipilih. Yuk, jelajahi menu kami.</p>';
+        return;
+      }
+      cartItems.replaceChildren(...cart.map((item,index)=>{
+        const row=document.createElement('div');
+        row.className='flex items-center justify-between gap-3 rounded-xl border border-[var(--line)] bg-white p-3';
+        const info=document.createElement('div');
+        const name=document.createElement('p'); name.className='text-sm font-bold'; name.textContent=item.name;
+        const price=document.createElement('p'); price.className='mt-1 text-xs text-[var(--muted)]'; price.textContent=`${rupiah(item.price)} × ${item.qty}`;
+        info.append(name,price);
+        const controls=document.createElement('div'); controls.className='flex items-center gap-2';
+        const minus=document.createElement('button'); minus.className='h-8 w-8 rounded-lg border border-[var(--line)] font-bold'; minus.textContent='−'; minus.setAttribute('aria-label',`Kurangi ${item.name}`); minus.addEventListener('click',()=>changeQty(index,-1));
+        const count=document.createElement('span'); count.className='w-4 text-center text-sm font-bold'; count.textContent=item.qty;
+        const plus=document.createElement('button'); plus.className='h-8 w-8 rounded-lg bg-[var(--ink)] text-white font-bold'; plus.textContent='+'; plus.setAttribute('aria-label',`Tambah ${item.name}`); plus.addEventListener('click',()=>changeQty(index,1));
+        controls.append(minus,count,plus); row.append(info,controls); return row;
+      }));
+    }
+    function addToCart(name,price){
+      const found=cart.find(item=>item.name===name);
+      if(found) found.qty++; else cart.push({name,price,qty:1});
+      renderCart(); openCart();
+    }
+    function changeQty(index,delta){
+      cart[index].qty+=delta;
+      if(cart[index].qty<=0) cart.splice(index,1);
+      renderCart();
+    }
+    function openCart(){
+      modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.classList.add('no-scroll');
+      document.getElementById('close-cart').focus();
+    }
+    function closeCart(){
+      modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.classList.remove('no-scroll');
+      document.getElementById('open-cart').focus();
+    }
+    document.querySelectorAll('.add-btn').forEach(button=>button.addEventListener('click',()=>addToCart(button.dataset.name,Number(button.dataset.price))));
+    document.getElementById('open-cart').addEventListener('click',openCart);
+    document.getElementById('close-cart').addEventListener('click',closeCart);
+    document.getElementById('clear-cart').addEventListener('click',()=>{cart.length=0;renderCart();});
+    modal.addEventListener('click',event=>{if(event.target===modal)closeCart();});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!modal.classList.contains('hidden'))closeCart();});
+    document.querySelectorAll('.filter-btn').forEach(button=>button.addEventListener('click',()=>{
+      const filter=button.dataset.filter;
+      document.querySelectorAll('.filter-btn').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+      let visible=0;
+      document.querySelectorAll('.menu-card').forEach(card=>{
+        const show=filter==='all'||card.dataset.category.split(' ').includes(filter);
+        card.classList.toggle('hidden',!show); if(show)visible++;
+      });
+      document.getElementById('empty-filter').classList.toggle('hidden',visible!==0);
+    }));
+    renderCart();
+  </script>
 </body>
 </html>
